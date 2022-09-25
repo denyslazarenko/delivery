@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "test"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.1"
+geopy = "1.21.0"
+pycognito ="0.1.2"
+attrs = "19.1.0"
+Flask = "1.1.4"
+jinja2 = "3.0.3"
+werkzeug = "2.0.3"
+itsdangerous = "2.0.1"
+Flask-API = "1.1"
+Flask-Cors = "3.0.7"
+flask-oidc = "1.4.0"
+httplib2 = "0.12.1"
+flexpolyline = "0.1.0"
+python-dotenv = "^0.21.0"
+numpy = "^1.23.3"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+preview = 1
+
+[tool.isort]
+profile = "black"
+filter_files = "1"
+default_section = "THIRDPARTY"
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+
+[tool.flake8]
+max-line-length = 88
+select = "B,C,E,F,W,T4,B9"
+extend-ignore = "E203, E501"
+max-complexity = 10
+docstring-convention = "numpy"
+extend-exclude = ".venv, .poetry"
+
+[tool.bandit]
+exclude_dirs = [".venv", ".poetry", "tests"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

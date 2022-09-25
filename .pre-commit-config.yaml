@@ -1,0 +1,34 @@
+repos:
+  # Python
+  - repo: https://github.com/psf/black
+    rev: 22.3.0 # Don't forget to update poetry files
+    hooks:
+      - id: black
+        args: [--config, pyproject.toml]
+
+  - repo: https://github.com/fsouza/autoflake8
+    rev: v0.3.2 # Don't forget to update poetry files
+    hooks:
+      - id: autoflake8
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 4.0.1 # Don't forget to update poetry files
+    hooks:
+      - id: flake8
+        entry: pflake8
+        additional_dependencies:
+          [pyproject-flake8, flake8-bugbear, flake8-docstrings]
+        args: [--config, pyproject.toml, --count, --statistics]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1 # Don't forget to update poetry files
+    hooks:
+      - id: isort
+        args: [--settings-path, pyproject.toml]
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.4 # Don't forget to update poetry files
+    hooks:
+      - id: bandit
+        additional_dependencies: [".[toml]"]
+        args: [-c, pyproject.toml]
