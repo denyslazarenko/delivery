@@ -5,7 +5,7 @@
 
 ## Local Run
 1. poetry install
-2. flask run --host 0.0.0.0 
+2. flask run --host 0.0.0.0   
 The application can now be reached under localhost:5000
 
 ## Docker
