@@ -12,5 +12,5 @@ class TestExample(TestBase):
 
     def test_example_route_returns_status_ok(self):
         expected_response = '200 OK'
-        actual_response = self.test_app.get('/vehicles').status
+        actual_response = self.test_app.get('/routes').status
         self.assertEqual(expected_response, actual_response)
