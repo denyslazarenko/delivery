@@ -209,6 +209,5 @@ yarn-error.log
 *venv/
 *myvenv/
 
-prod.env
 credentials.properties
 data

@@ -1,4 +1,5 @@
 import logging
+import os
 
 from src.microservice.core.adapters import LoadData, HereAdapter, RoutePlanner
 from src.utils import ApiResponseStatus, ApiResponse, DataNotFoundException
@@ -6,7 +7,7 @@ from src.utils import ApiResponseStatus, ApiResponse, DataNotFoundException
 
 class Controller(object):
     def __init__(self):
-        self.loaded_data = LoadData("/data")
+        self.loaded_data = LoadData(os.environ["DATA_PATH"])
         self.here_adapter = HereAdapter()
         self.route_planning = RoutePlanner(self.loaded_data, self.here_adapter)
 
